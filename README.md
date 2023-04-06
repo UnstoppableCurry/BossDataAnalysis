@@ -3,7 +3,18 @@
 ![image](https://user-images.githubusercontent.com/65523997/230296359-00b8b910-5be1-4251-a8c4-004604866f9e.png)
 ![image](https://user-images.githubusercontent.com/65523997/230296942-3e502218-4c7d-4ae6-b0a4-e90aa0db816d.png)
 ![image](https://user-images.githubusercontent.com/65523997/230297100-a1ee0319-f57d-4628-a30c-49e9d266ff48.png)
-
+- hashTF工具使用
+	- 算法
+		- 创建一个document.length长度的稀疏矩阵,按照hashcode 进行数据存储,在数据量大时有意义,但当数据量比较小时没必要用,因为调用这个方法会丢失变量与hashcode的映射关系,并且无法解决哈希冲突
+	- mlib 基于rdd做计算
+	- ml 基于dataFrame做计算,抽象层级更高
+|[硕士, 深度, 学习, 算法, ...|(1048576,[28698,7...|
+|[硕士, 深度, 学习, 算法, ...|(1048576,[73080,9...|
+- 相同的值,hashcode不同
+	- string类型和stringbuilder的差异
+		- String是char[]数组存放
+		- 返回hashcode的时候是每一位字符的ascll码乘31
+		- 传入时因为长度不一致,即使ascll码相同但hashcode 不同
 
  - 视频教程
   - https://www.bilibili.com/video/BV1Kh41167mS?p=1&vd_source=291a370896a189f23083e981b5fb49b5
