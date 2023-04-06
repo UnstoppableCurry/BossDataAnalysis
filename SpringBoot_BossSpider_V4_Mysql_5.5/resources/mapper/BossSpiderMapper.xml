@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="store.eazychina.wtx.mapper.BossSpiderMapper">
+	<select id="bossAddData" parameterType="store.eazychina.wtx.pojo.bossPojo">
+		INSERT INTO
+		`boss_job_data_deeplearning4beijing` (`companyName`, `hrMessage`, `vline`, `minRed`,
+		`maxRed`, `jobAreaWrapper`, `jobName`, `jobTagItem`, `otherRed`)values
+		(#{companyName},#{hrMessage},#{vline},#{minRed},#{maxRed},#{jobAreaWrapper},#{jobName},#{jobTagItem},#{otherRed})
+	</select>
+	<select id="findAll" resultType="store.eazychina.wtx.pojo.bossPojo">
+	select * from boss_job_data_deeplearning4beijing
+	</select>
+	
+	<select id="PathLike" parameterType="java.lang.String" resultType="store.eazychina.wtx.pojo.bossPojo" >
+		select *  from `boss_job_data_deeplearning4beijing` where jobAreaWrapper like "%"#{value}"%"
+	</select>
+	
+	
+	
+		<select id="jobName" parameterType="java.lang.String" resultType="store.eazychina.wtx.pojo.bossPojo" >
+		select *  from `boss_job_data_deeplearning4beijing` where jobName like "%"#{value}"%" 
+	</select>
+	<select id="companyName" parameterType="java.lang.String" resultType="store.eazychina.wtx.pojo.bossPojo" >
+		select *  from `boss_job_data_deeplearning4beijing` where companyName like "%"#{value}"%" 
+	</select>
+		<select id="jobTagItem" parameterType="java.lang.String" resultType="store.eazychina.wtx.pojo.bossPojo" >
+		select *  from `boss_job_data_deeplearning4beijing` where jobTagItem like "%"#{value}"%" 
+	</select>
+	<select id="alldata" parameterType="store.eazychina.wtx.pojo.bossPojo" resultType="store.eazychina.wtx.pojo.bossPojo" >
+		select *  from `boss_job_data_deeplearning4beijing` where jobTagItem like "%"#{jobTagItem}"%" and  companyName like "%"#{companyName}"%" and  jobAreaWrapper like "%"#{jobAreaWrapper}"%" and  jobName like "%"#{jobName}"%"
+	</select>
+	
+</mapper>
