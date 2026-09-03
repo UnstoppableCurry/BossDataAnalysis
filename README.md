@@ -1,4 +1,9 @@
 # BossDataAnalysis
+
+**静态项目展示（非浏览器演示）：** [https://unstoppablecurry.github.io/BossDataAnalysis/](https://unstoppablecurry.github.io/BossDataAnalysis/)
+
+本仓库是 Java/Spring 招聘数据爬虫与分析项目，完整功能需要后端（Spring Boot、MySQL、ChromeDriver 等）。GitHub Pages 站点只展示 README/源码中可核对的问题、架构、流程、截图、用法与限制，不会在浏览器里运行爬虫。
+
 ![image](https://user-images.githubusercontent.com/65523997/230296246-aeed227d-95b5-4eff-835e-fa10d3be580f.png)
 ![image](https://user-images.githubusercontent.com/65523997/230296359-00b8b910-5be1-4251-a8c4-004604866f9e.png)
 ![image](https://user-images.githubusercontent.com/65523997/230296942-3e502218-4c7d-4ae6-b0a4-e90aa0db816d.png)

@@ -1,0 +1,19 @@
+{
+  "name": "BossDataAnalysis 静态展示",
+  "short_name": "BossDataAnalysis",
+  "lang": "zh-CN",
+  "description": "BOSS 直聘招聘数据爬虫与分析项目的静态展示页，不是可运行演示。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#161310",
+  "theme_color": "#161310",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
