@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BossDataAnalysis 静态展示｜BOSS 招聘数据爬虫与分析</title>
+  <meta name="description" content="BossDataAnalysis 的静态项目展示页。依据 README 与仓库源码说明问题、架构、流程、截图、用法与限制。本页不是可运行演示，完整功能需要 Spring Boot、MySQL 与 ChromeDriver。">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#161310">
+  <link rel="canonical" href="https://unstoppablecurry.github.io/BossDataAnalysis/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="BossDataAnalysis 静态展示｜BOSS 招聘数据爬虫与分析">
+  <meta property="og:description" content="静态项目展示，不是浏览器演示。依据 README 与源码整理问题、架构、流程、截图、用法与限制。">
+  <meta property="og:url" content="https://unstoppablecurry.github.io/BossDataAnalysis/">
+  <meta property="og:image" content="https://unstoppablecurry.github.io/BossDataAnalysis/assets/screenshots/readme-01-region-salary.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BossDataAnalysis 静态展示">
+  <meta name="twitter:description" content="Java/Spring 招聘数据爬虫与分析仓库的静态说明页，不是可运行演示。">
+  <meta name="twitter:image" content="https://unstoppablecurry.github.io/BossDataAnalysis/assets/screenshots/readme-01-region-salary.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "BossDataAnalysis",
+    "description": "基于仓库 README 与源码的静态项目展示。Java/Spring Boot 爬取 BOSS 直聘职位页，写入 MySQL，并提供查询与图表页；另有 Python 标签挖掘脚本。本 GitHub Pages 站点不运行后端。",
+    "codeRepository": "https://github.com/UnstoppableCurry/BossDataAnalysis",
+    "programmingLanguage": ["Java", "Python", "SQL"],
+    "runtimePlatform": "Spring Boot",
+    "inLanguage": "zh-CN",
+    "url": "https://unstoppablecurry.github.io/BossDataAnalysis/",
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">BD</span>
+        <span class="brand-text">BossDataAnalysis<small>静态展示 · 非演示</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">菜单</button>
+      <nav class="site-nav" id="site-nav" aria-label="页面章节">
+        <ul>
+          <li><a href="#problem">问题</a></li>
+          <li><a href="#architecture">架构</a></li>
+          <li><a href="#workflow">流程</a></li>
+          <li><a href="#screenshots">截图</a></li>
+          <li><a href="#usage">用法</a></li>
+          <li><a href="#limits">限制</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <p class="hero-kicker">Static showcase · 需要后端</p>
+        <h1>BOSS 招聘数据爬虫与分析</h1>
+        <p class="lede">这是仓库 <a href="https://github.com/UnstoppableCurry/BossDataAnalysis">BossDataAnalysis</a> 的静态项目展示页，用中文说明仓库里能核对到的问题、架构、流程、截图、用法与限制。它<b>不是</b>浏览器演示，也不会在此页启动爬虫或查询数据库。</p>
+        <p class="hero-note">完整能力依赖本机或服务器上的 Java/Spring Boot、MySQL、ChromeDriver 与（可选）Python 脚本。README 另指向 Bilibili 教程与百度网盘中的「全部代码与连接」。</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/UnstoppableCurry/BossDataAnalysis">打开 GitHub 仓库</a>
+          <a class="btn btn-ghost" href="https://www.bilibili.com/video/BV1Kh41167mS?p=1&amp;vd_source=291a370896a189f23083e981b5fb49b5">Bilibili 视频教程</a>
+          <a class="btn btn-ghost" href="#usage">查看本地用法</a>
+        </div>
+        <dl class="facts">
+          <div class="fact">
+            <dt>本页性质</dt>
+            <dd>静态说明，无后端</dd>
+          </div>
+          <div class="fact">
+            <dt>仓库可见栈</dt>
+            <dd>Spring Boot + MySQL + Python</dd>
+          </div>
+          <div class="fact">
+            <dt>采集目标（源码）</dt>
+            <dd>zhipin.com 职位列表页</dd>
+          </div>
+          <div class="fact">
+            <dt>指标声明</dt>
+            <dd>不编造数量、准确率或用户</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="problem" aria-labelledby="problem-title">
+      <div class="wrap">
+        <h2 id="problem-title">要解决什么问题</h2>
+        <p class="section-lead">以下三点直接来自 README「项目初衷」，不是本页补充的产品叙事。</p>
+        <div class="grid-3">
+          <article class="card">
+            <h3>1. 给在职程序员看行情</h3>
+            <p>作者写自己也是程序员，希望通过项目帮助同行了解 IT 市场行情，不要被 996 / 007 压榨，并能根据岗位标签衡量自身价值。</p>
+          </article>
+          <article class="card">
+            <h3>2. 给准备入行的同学选型</h3>
+            <p>希望未来想做程序员的人，通过学习项目认识行业、选择要学的技术栈，并清楚学完对应的市场定价，而不是只听培训机构。</p>
+          </article>
+          <article class="card">
+            <h3>3. 给毕设同学做一件具体的事</h3>
+            <p>希望需要写毕业设计的同学，借这个项目体会编程，做「真正有意义」的事情，而不是为毕业而毕业。</p>
+          </article>
+        </div>
+        <p class="cite">README 还写：「这个项目通过 Java-Scala 实现基本的数据挖掘」。本仓库快照里能打开的实现是 Java/Spring Boot 爬虫与分析接口，以及 <code>python/</code> 下的 NumPy 脚本；未见 Scala / Spark 源码文件。</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="architecture" aria-labelledby="arch-title">
+      <div class="wrap">
+        <h2 id="arch-title">架构（仅仓库证据）</h2>
+        <p class="section-lead">目录、依赖与类职责如下。未在源码中核实的组件（例如 Spark HashTF 作业、HBase 读写）单独标出，避免写成已实现能力。</p>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Spring Boot 服务</h3>
+            <p>模块目录 <code>SpringBoot_BossSpider_V4_Mysql_5.5/</code>。父 POM 为 Spring Boot <code>1.4.0.RELEASE</code>，主类 <code>store.eazychina.wtx.ApplicationController</code>。<code>application.properties</code> 中 <code>server.port=9005</code>，Thymeleaf 前缀 <code>classpath:/templates/</code>，模式 <code>LEGACYHTML5</code>。</p>
+            <p>已声明依赖包括：<code>spring-boot-starter-web</code>、Thymeleaf、NekoHTML、MySQL 驱动、MyBatis、Druid、WebMagic 0.7.3、Selenium 3.x、dom4j / jaxen。POM 另含 <code>hbase-client</code> 与邮件 starter；已检索的 Java 源码未见 HBase 或发信调用。</p>
+          </article>
+          <article class="card">
+            <h3>数据与分析侧</h3>
+            <p><code>bossdataanalysis.sql</code> 标注为 Navicat 从 MySQL 5.5、库名 <code>bossdataanalysis</code> 导出，日期 2021-12-05。明细表 <code>boss_job_data_deeplearning4beijing</code> 字段与 <code>bossPojo</code> 一致：公司、HR、学历/经验、最低/最高薪、地点、岗位名、标签、实习日薪备用字段。</p>
+            <p>汇总表包括 <code>boss_addr_money</code>、<code>boss_addr_jobname_money</code>、<code>boss_addr_jobname_money_beijing</code>、<code>boss_china_addr_jobname_money</code>、<code>boss_deeplearning4beijing_jobname_money</code> 等。<code>python/标签挖掘_可视化.py</code> 用 CSV 矩阵求秩并用伪逆估计标签分量。</p>
+          </article>
+        </div>
+        <div class="table-wrap" role="region" aria-label="源码中的主要类型" tabindex="0">
+          <table>
+            <caption class="visually-hidden">仓库内可见的主要 Java 类型</caption>
+            <thead>
+              <tr>
+                <th scope="col">层</th>
+                <th scope="col">证据位置</th>
+                <th scope="col">做什么</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>爬虫</td>
+                <td><code>bossSpider</code> / <code>bossSpider_V2</code></td>
+                <td>WebMagic <code>PageProcessor</code> + <code>SeleniumDownloader</code>，抽取 <code>.job-primary</code> 写入本地文件，并跟分页链接。</td>
+              </tr>
+              <tr>
+                <td>解析</td>
+                <td><code>BossDataUtil</code></td>
+                <td>递归读路径 → 按 <code>&lt;div class="job-primary"&gt;</code> 切分 → dom4j/XPath 取公司、HR、学历、薪资、地点、岗位、标签。</td>
+              </tr>
+              <tr>
+                <td>接口</td>
+                <td><code>spiderControllor</code></td>
+                <td><code>/bossSpiderStart</code>、<code>/bsstart</code> 启爬；<code>/addBossData</code> 入库；<code>/getBossList</code> 与按公司/岗位/标签/地点的模糊查询。</td>
+              </tr>
+              <tr>
+                <td>图表页</td>
+                <td><code>BossAnalysisControllor</code></td>
+                <td>读汇总表，把均薪、岗位名、地区等放进 Model，返回 <code>/BI/...</code> 视图名。</td>
+              </tr>
+              <tr>
+                <td>README 笔记</td>
+                <td>HashTF / MLlib / ml</td>
+                <td>说明稀疏哈希、RDD 与 DataFrame 差异，以及 String 与 StringBuilder 的 hashCode 差异。本快照没有对应 Spark 作业文件。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow" aria-labelledby="flow-title">
+      <div class="wrap">
+        <h2 id="flow-title">工作流程</h2>
+        <p class="section-lead">按控制器、爬虫与工具类的调用顺序整理。本页不执行其中任何一步。</p>
+        <ol class="flow">
+          <li>
+            <h3>打开 BOSS 直聘职位列表</h3>
+            <p>源码写死若干 <code>https://www.zhipin.com/job_detail/</code> 查询，例如「推荐算法」「石家庄javaweb」「算法」「石家庄大数据」，城市参数如 <code>100010000</code>、<code>101010100</code>。</p>
+          </li>
+          <li>
+            <h3>Selenium + WebMagic 抓列表卡片</h3>
+            <p><code>SeleniumDownloader</code> 指向本机 ChromeDriver；<code>Site</code> 重试 1 次、休眠 3000ms。页面处理抽取 <code>[class=job-primary]</code>，并向 <code>.page</code> 或 XPath 分页节点追加后续请求。线程数在启动代码里为 1。</p>
+          </li>
+          <li>
+            <h3>HTML 落盘后再结构化</h3>
+            <p><code>BossDataUtil.startMakeDataForBossSpider(path)</code> 读目录中的文件。薪资若含「元/天」则记入 <code>otherRed</code> 且 min/max 为 0；否则按 <code>min-maxK</code> 拆成整数。结果用 <code>HashSet</code> 去重。</p>
+          </li>
+          <li>
+            <h3>写入 MySQL，再按字段查</h3>
+            <p><code>/addBossData</code> 调用 <code>BossDataService.addBossData</code>，MyBatis 插入 <code>boss_job_data_deeplearning4beijing</code>。列表页按地点、公司、岗位名、标签 <code>LIKE</code> 过滤，或四条件同时过滤。</p>
+          </li>
+          <li>
+            <h3>汇总表驱动图表模板</h3>
+            <p>分析控制器把 <code>avgred</code>、<code>addr</code>、<code>jobName</code>、<code>rank</code> 等放进 JSON，返回例如 <code>/BI/addr_money</code>、<code>/BI/China_jobName_money</code>、<code>/BI/getmoneyforjobnamebybeijing</code>。本快照中没有这些 Thymeleaf/JSP 文件。</p>
+          </li>
+          <li>
+            <h3>Python 对标签矩阵做最小二乘式估计</h3>
+            <p><code>标签挖掘_可视化.py</code> 读标签矩阵与薪资向量，比较系数矩阵与增广矩阵的秩，再用伪逆点乘得到每个标签的估计值并写出 CSV。脚本内路径是作者本机 Windows 目录，不在仓库里。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section alt" id="screenshots" aria-labelledby="shots-title">
+      <div class="wrap">
+        <h2 id="shots-title">README 中的四张截图</h2>
+        <p class="section-lead">与 README 顶部四张 <code>user-images.githubusercontent.com</code> 图相同，按出现顺序排列。它们来自教程录像画面，只能证明当时本地后台长什么样，不能当作当前线上结果或统计结论。</p>
+        <div class="shots">
+          <figure class="shot">
+            <button type="button" data-lightbox data-caption="README 第 1 张：后台「全国-地区平均薪资」柱状图。">
+              <img src="assets/screenshots/readme-01-region-salary.png" alt="教程录像中的管理后台，侧栏展开大数据岗位分析，主区是全国地区平均薪资柱状图，悬停提示通化 13（单位千元/每月）。" width="1504" height="793">
+            </button>
+            <figcaption>第 1 张：layuiAdmin 风格后台。侧栏可见 spider、大数据岗位 Analysis、算法岗 Analysis；当前项为「全国-地区平均薪资」。</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" data-lightbox data-caption="README 第 2 张：关键词柱状图。">
+              <img src="assets/screenshots/readme-02-tag-bars.png" alt="关键词柱状图，横轴为算法、深度、语言、处理等标签，悬停在「经验」上显示单位千元/每月及一个小数数值。浏览器标签可见 localhost:8089。" width="1506" height="860">
+            </button>
+            <figcaption>第 2 张：标签/关键词柱状图。浏览器标签可见 <code>localhost:8089</code>，与配置文件默认端口 9005 不是同一处证据。</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" data-lightbox data-caption="README 第 3 张：Boss 爬虫数据表格。">
+              <img src="assets/screenshots/readme-03-job-table.png" alt="Boss爬虫数据表格页，列包括公司、HR、经验学历、最低最高薪、地点、岗位名称和标签，行中可见 OPPO、快手、腾讯等公司名。">
+            </button>
+            <figcaption>第 3 张：「Boss爬虫数据」表格，列与 <code>bossPojo</code> / 明细表字段对应。侧栏同时列出爬虫控制面板与若干分析入口。</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" data-lightbox data-caption="README 第 4 张：南丁格尔玫瑰图。">
+              <img src="assets/screenshots/readme-04-rose-chart.png" alt="深色背景的南丁格尔玫瑰图，扇区标注监控、文字、搜索引擎等中文标签。地址栏指向 SpringBoot 项目 target/templates/BI 下的本地 HTML。">
+            </button>
+            <figcaption>第 4 张：玫瑰图。地址栏指向 <code>SpringBoot_BossSpider_V4_Mysql_5.5/target/templates/BI/</code> 下的本地文件，说明图表曾由本地构建产物打开。</figcaption>
+          </figure>
+        </div>
+        <p class="cite">原图地址仍保留在 README。画面带 Bilibili 水印，作者昵称出现在录像里；本页只转述截图内容，不把它写成平台认证。</p>
+      </div>
+    </section>
+
+    <section class="section dark" id="usage" aria-labelledby="usage-title">
+      <div class="wrap">
+        <h2 id="usage-title">用法（从源码能推出的步骤）</h2>
+        <p class="section-lead">仓库没有逐步安装手册。下面只写配置文件、注解路径和脚本里实际出现的内容。本 GitHub Pages 站点不能代替这些步骤。</p>
+        <ol class="usage-list">
+          <li>准备 JDK、Maven、MySQL，以及与源码匹配的 ChromeDriver 和 WebMagic <code>config.ini</code>。</li>
+          <li>导入 <code>bossdataanalysis.sql</code>（导出头信息：MySQL 5.5，库名 <code>bossdataanalysis</code>）。</li>
+          <li>按自己的环境改 <code>application.properties</code> 中的数据源。仓库里有历史主机与账号字段，使用前应整份替换，不要沿用示例机密。</li>
+          <li>把爬虫里的驱动路径改成你的机器。源码出现过 Windows <code>G:\爬虫\drive\chromedriver.exe</code> 与 Linux <code>/usr/bin/chromedriver</code>，以及对应的 <code>selenuim_config</code>（源码拼写如此）。</li>
+          <li>打包并运行主类 <code>store.eazychina.wtx.ApplicationController</code>。配置默认监听 <code>0.0.0.0:9005</code>。</li>
+          <li>Python 分析需自行提供脚本里写死的 CSV 路径后运行 <code>python/标签挖掘_可视化.py</code>（或同目录相近脚本）。</li>
+          <li>README「全部代码与连接」指向百度网盘 <a href="https://pan.baidu.com/s/1czBsipp3JmWcAhFxmfkIjQ">https://pan.baidu.com/s/1czBsipp3JmWcAhFxmfkIjQ</a>，提取码 <code>ma2q</code>。本快照缺少页面模板时，网盘可能含其余文件，本页未核验网盘内容。</li>
+          <li>配套讲解见 README 视频教程：<a href="https://www.bilibili.com/video/BV1Kh41167mS?p=1&amp;vd_source=291a370896a189f23083e981b5fb49b5">BV1Kh41167mS</a>。</li>
+        </ol>
+        <div class="table-wrap" role="region" aria-label="源码中的 HTTP 路径" tabindex="0">
+          <table>
+            <caption class="visually-hidden">RequestMapping 一览</caption>
+            <thead>
+              <tr>
+                <th scope="col">路径</th>
+                <th scope="col">类</th>
+                <th scope="col">源码含义</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>/</code>、<code>/home/homepage2</code></td>
+                <td>IndexController</td>
+                <td>返回 <code>/jsp/index</code>、<code>/jsp/home/homepage2</code></td>
+              </tr>
+              <tr>
+                <td><code>/spider/controller</code></td>
+                <td>spiderControllor</td>
+                <td>返回爬虫页 <code>/jsp/spider</code></td>
+              </tr>
+              <tr>
+                <td><code>/bossSpiderStart</code>、<code>/bsstart</code></td>
+                <td>spiderControllor</td>
+                <td>组装 Spider 并 <code>start()</code>，响应文本「爬虫启动」</td>
+              </tr>
+              <tr>
+                <td><code>/addBossData</code></td>
+                <td>spiderControllor</td>
+                <td>按 <code>path</code> 解析文件并入库，响应「导入成功」</td>
+              </tr>
+              <tr>
+                <td><code>/getBossList</code>、<code>/PathLike</code>、<code>/companyName</code>、<code>/jobName</code>、<code>/jobTagItem</code>、<code>/alldata</code></td>
+                <td>spiderControllor</td>
+                <td>查询后返回 <code>/jsp/user/user/list</code></td>
+              </tr>
+              <tr>
+                <td><code>/getdatabyaddr</code>、<code>/getdatabyjobname</code>、<code>/getdatabyaddrjobname</code>、<code>/findByAddrJobNameBeiJing</code> 等</td>
+                <td>BossAnalysisControllor</td>
+                <td>地区均薪、供需、北京/石家庄岗位薪资等图表视图</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="cite"><code>/bsstart</code> 注释里写过阿里云路径和 <code>http://47.242.82.87:8089/WebMagic_SpringBoot/bsstart</code>。那是源码注释中的历史操作地址，本页不把它当作仍在服务的部署。</p>
+      </div>
+    </section>
+
+    <section class="section" id="limits" aria-labelledby="limits-title">
+      <div class="wrap">
+        <h2 id="limits-title">限制与未证实事项</h2>
+        <p class="section-lead">只写仓库里能直接看到的缺口，以及本页明确不会声称的内容。</p>
+        <div class="limits">
+          <article class="limit">
+            <h3>这不是可运行演示</h3>
+            <p>GitHub Pages 只托管 <code>docs/</code> 静态文件。没有 Spring 进程、没有 MySQL、不会调用 ChromeDriver。图表与表格截图不能在本站复现。</p>
+          </article>
+          <article class="limit">
+            <h3>本快照缺少前端模板</h3>
+            <p>控制器返回 <code>/jsp/...</code> 与 <code>/BI/...</code>，但仓库内没有对应 HTML/JSP。README 把「全部代码」指向网盘。截图中的 layuiAdmin 壳层也不在本快照里。</p>
+          </article>
+          <article class="limit">
+            <h3>选择器绑在旧版职位页 DOM</h3>
+            <p>解析依赖 <code>job-primary</code>、<code>job-name</code>、<code>job-area</code>、<code>tag-item</code>、<code>info-publis</code> 等。站点改版后，现有 XPath/CSS 可能直接失效。</p>
+          </article>
+          <article class="limit">
+            <h3>路径与启动参数写死</h3>
+            <p>ChromeDriver、数据目录、部分查询 URL 写在 Java 里。换机器必须改源码或先做配置抽取（仓库未提供统一外置配置）。</p>
+          </article>
+          <article class="limit">
+            <h3>依赖年代较早</h3>
+            <p>Spring Boot 1.4、编译插件出现 Java 1.7、WebMagic 0.7.3、Selenium 3。这是 POM 事实，不代表已做现代化升级。</p>
+          </article>
+          <article class="limit">
+            <h3>README 中的 HashTF 注意事项</h3>
+            <p>作者写明：按 hashCode 写入 document.length 稀疏矩阵，大数据量才有意义；会丢失变量与 hashCode 的映射，且无法解决哈希冲突。小数据量「没必要用」。</p>
+          </article>
+          <article class="limit">
+            <h3>第三方站点与合规</h3>
+            <p>爬虫目标是 BOSS 直聘公开职位列表。是否允许抓取、频率与用途，须自行对照当时法律与网站条款。本页不提供绕过限制的做法。</p>
+          </article>
+          <article class="limit">
+            <h3>本页不会给出的数字</h3>
+            <p>不把 SQL 行数、AUTO_INCREMENT、工具类注释里的一次解析循环次数，或截图坐标轴，写成岗位总量、准确率、用户数、生产部署或分析结论。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>静态展示站点 · 发布地址 <a href="https://unstoppablecurry.github.io/BossDataAnalysis/">https://unstoppablecurry.github.io/BossDataAnalysis/</a></p>
+      <p>源码 <a href="https://github.com/UnstoppableCurry/BossDataAnalysis">UnstoppableCurry/BossDataAnalysis</a> · 教程 <a href="https://www.bilibili.com/video/BV1Kh41167mS?p=1&amp;vd_source=291a370896a189f23083e981b5fb49b5">Bilibili BV1Kh41167mS</a></p>
+      <p>文字只依据 README、Java/Python/SQL 与上述四张既有截图。启用 GitHub Pages 时请把发布源设为 GitHub Actions（工作流 <code>.github/workflows/static.yml</code>）。</p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="放大截图">
+    <button class="lightbox-close" type="button">关闭</button>
+    <img id="lightbox-image" alt="">
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
